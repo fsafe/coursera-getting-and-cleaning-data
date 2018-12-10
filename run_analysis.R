@@ -20,7 +20,9 @@ if(!file.exists(downloadDirectory))  {
 
 setwd(downloadDirectory)
 
-download.file(downloadUrl,downloadFileName,method = "curl")
+if(!file.exists(downloadFileName))  {
+  download.file(downloadUrl,downloadFileName,method = "curl")
+}
 unzip(downloadFileName)
 
 #######################################################################################################
