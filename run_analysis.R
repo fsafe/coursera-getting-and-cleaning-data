@@ -116,6 +116,11 @@ features <- gsub("std","Std",features)
 # this needs to be removed
 features <- gsub("BodyBody","Body",features)
 
+# columns with short forms are repalced with full forms
+features <- gsub("Gyro","Gyroscope",features)
+features <- gsub("Mag","Magnitude",features)
+features <- gsub("Acc","Accelerometer",features)
+
 # assign header to column names of df
 colnames(df) <- features
 
