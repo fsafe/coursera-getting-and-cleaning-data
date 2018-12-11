@@ -129,6 +129,6 @@ colnames(df2)[1] <- "activity"
 colnames(df2)[2] <- "subjectId"
 
 # write independant dataset to a local file
-if(!file.exists(paste0("../",outputFile)))  {
+if(!file.exists(outputFile))  {
   write.table(df2,file = outputFile,row.name=FALSE)  
 }
