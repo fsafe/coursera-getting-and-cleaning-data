@@ -3,6 +3,9 @@ Data Science Specialization (Johns Hopkins University) - Getting and Cleaning Da
 
 The purpose of this project is to collect, work with, and clean a data set.
 
+To run correctly you just need to run the R script "run_analysis.R". All file downloading, setting the correct working directory
+, data analysis and writing the output tidy data to a file are done by the script.
+
 Below is an explanation of the steps taken by the script run_analysis.R:
 
 1. The working directory is set to the "download" folder and raw data ( in compressed form ) is downloaded. The data is then uncompressed.
