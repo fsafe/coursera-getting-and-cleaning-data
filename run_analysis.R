@@ -3,7 +3,7 @@
 ##############################################################################################
 
 downloadUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-downloadDirectory <- paste0(getwd(),"/download")
+downloadDirectory <- getwd()
 downloadFileName <- "data.zip"
 outputFile <- "tidy.csv"
 
@@ -130,5 +130,5 @@ colnames(df2)[2] <- "subjectId"
 
 # write independant dataset to a local file
 if(!file.exists(paste0("../",outputFile)))  {
-  write.table(df2,file = paste0("../",outputFile),row.name=FALSE)  
+  write.table(df2,file = outputFile,row.name=FALSE)  
 }
