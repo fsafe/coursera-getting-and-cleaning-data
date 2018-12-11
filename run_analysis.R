@@ -5,6 +5,7 @@
 downloadUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 downloadDirectory <- paste0(getwd(),"/download")
 downloadFileName <- "data.zip"
+outputFile <- "tidy.csv"
 
 dataFilesList <- list(activityFile = 'activity_labels.txt',featuresFile = 'features.txt',subjTrainFile = 'subject_train.txt',
                    xTrainFile = 'X_train.txt',yTrainFile = 'y_train.txt',subjTestFile = 'subject_test.txt',
@@ -126,3 +127,8 @@ colnames(df) <- features
 df2 <- aggregate(x = list(df[,head(colnames(df),n=-2)]),by = list(df$activityDescription,df$subjectId),mean)
 colnames(df2)[1] <- "activity"
 colnames(df2)[2] <- "subjectId"
+
+# write independant dataset to a local file
+if(!file.exists(paste0("../",outputFile)))  {
+  write.table(df2,file = paste0("../",outputFile),row.name=FALSE)  
+}
